@@ -5,7 +5,7 @@ COPY --from=golang:1.12 /usr/local/go /usr/local/go
 RUN ln -s /usr/local/go/bin/go /usr/local/bin/go \
  && apt-get update && apt-get -y install git gcc \
  && mkdir -p ~/go/src/github.com/prometheus/node_exporter \
- && git clone -b v0.15.1 https://github.com/prometheus/node_exporter.git ~/go/src/github.com/prometheus/node_exporter \
+ && git clone -b v0.15.2 https://github.com/prometheus/node_exporter.git ~/go/src/github.com/prometheus/node_exporter \
  && cd ~/go/src/github.com/prometheus/node_exporter \
  && GOOS=linux GOARCH=arm GOARM=7 go build
 
